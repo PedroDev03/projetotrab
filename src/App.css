@@ -1,0 +1,14 @@
+.container{
+    margin-right:50%;
+    margin: 800px;
+}
+
+.pergunta{
+    background-color: rgb(0, 0, 0);
+}
+.texto{
+    color: red;
+}
+.select{
+    width: 10000px;
+}
