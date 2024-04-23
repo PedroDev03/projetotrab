@@ -1,5 +1,30 @@
 .container{
-  margin-top:15%;
+  display: flex;
+ 
+  height: 100vh;
+  margin: 50px;
+
+}
+
+.input-area{
+
+    margin-bottom:35%;
+    margin-left: 15%;
+
+}
+
+.cards{
+  background-color: green;
+  margin-top: 20%;
   margin-left:20%;
-  font-size:x-large;
+  width: 35%;
+  border-radius: 8%;
+}
+.card-info>p{
+  color: aliceblue;
+  margin-left: 5%;
+  margin-top: 15%;
+}
+.card-image{
+  margin-bottom: 10%;
 }
