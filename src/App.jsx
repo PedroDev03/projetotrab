@@ -4,7 +4,7 @@ import "./index.css";
 export default function App() {
   const [data, setData] = useState(null);
   const [pokemonName, setPokemonName] = useState("");
-
+  const [pokemonshiny , setPokemonshiiny] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,6 +50,7 @@ export default function App() {
      dragon: "coral", 
      rock: "darkslategrey", 
      electric: "gold",
+     fighting: "goldenrod",
     
 
     
@@ -67,6 +68,7 @@ export default function App() {
   };
   
 
+  const actualImageshiny = data?.sprites?.front_shiny || pokelogo;
   const actualImage = data?.sprites?.front_default || pokelogo;
   const verify = data.types && data.types.length > 0 && data.types[0].type && data.types[0].type.name || data.types && data.types.length > 0 && data.types[1].type && data.types[1].type.name;
 
@@ -93,9 +95,15 @@ export default function App() {
                 <img src={pokelogo}/>
                 
               ) : (
-                <img src={actualImage}/>
+                <>
+                        {pokemonshiny && <button className="shiny" onClick={() => setPokemonshiiny(!pokemonshiny)}>shiny</button>}
+                        
+                <img src={pokemonshiny ? actualImage : actualImageshiny} onClick={() => setPokemonshiiny(!pokemonshiny)}/>
+
+                </> 
               )
-             }
+                   
+             }      
              
 
           </div>

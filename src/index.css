@@ -24,6 +24,7 @@
   box-shadow: 0px 0px 15px #585858,
   125px -15px 30px #ffffff;
   border-radius: 3%;
+  /* color: darkgoldenrod; */
 }
 .tipo{
     margin-left: 35px;
@@ -44,12 +45,30 @@
 }
 .card-image{
   background-color: #000;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3;
 }
+/* .card-image:hover img{
+
+} */
 .card-image>img{
   position: absolute;
-  left: 565px;
-  top: 30%;
+  top: 80px;
   height: 180px;
   width: 180px;
+  transition: 1s;
+  cursor: pointer;
 }
+.shiny{
+  position:absolute;
+  left: 25px;
+  top: 50px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: black;
 
+}
