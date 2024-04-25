@@ -7,9 +7,7 @@
   display: flex;
   margin-left: 65px;
   margin-top: 9px ;
-  font-family:sans-serif ;
-
-}
+  font-family:sans-serif ;}
 .texto{
   margin-left: 100px;
   margin-top:80px;
@@ -29,6 +27,7 @@
 }
 .tipo{
     margin-left: 35px;
+    font-weight: bold;
 
 }
 .card-info{
@@ -39,8 +38,9 @@
   align-self: flex-start;
   color: black;
   font-family: sans-serif;
-  font-size: larger;
+  font-size: medium;
   font-weight:bolder;
+   /* color:gold;  */
 }
 .card-image{
   background-color: #000;
