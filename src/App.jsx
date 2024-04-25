@@ -96,7 +96,7 @@ export default function App() {
                 
               ) : (
                 <>
-                        {pokemonshiny && <button className="shiny" onClick={() => setPokemonshiiny(!pokemonshiny)}>shiny</button>}
+                        {<button className="shiny" onClick={() => setPokemonshiiny(!pokemonshiny)}>shiny</button>}
                         
                 <img src={pokemonshiny ? actualImage : actualImageshiny} onClick={() => setPokemonshiiny(!pokemonshiny)}/>
 
