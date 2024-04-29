@@ -50,7 +50,7 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  transition: 0.3;
+ 
 }
 /* .card-image:hover img{
 
@@ -62,13 +62,33 @@
   width: 180px;
   transition: 1s;
   cursor: pointer;
+  transition: 1.3s;
 }
-.shiny{
+.btn-shiny{
   position:absolute;
   left: 25px;
   top: 50px;
   text-transform: uppercase;
   font-weight: 600;
   color: black;
-
+  cursor: pointer;;
+  border-radius: 4px;
 }
+.aviso-shiny{
+  bottom:210px;
+  position: absolute;
+  color: black;
+  font-family: sans-serif;
+  margin-left: 115px;
+  }
+  
+
+  .fade-in{
+    animation: fadein 5s ease-in;
+  }
+
+  @keyfranes fadein{
+    0% { opacity: 0;}
+    100% {opacity: 1;}
+  }
+  
