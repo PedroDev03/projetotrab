@@ -1,0 +1,43 @@
+salvamento 
+
+          <div className="card-image">
+            {pokemonName === "" ? (
+              <img src={pokelogo} alt="Pokémon" />
+            ) : (
+              <>
+                <button
+                  className="btn-shiny"
+                  onClick={() => setPokemonshiiny(!pokemonshiny)}
+                >
+                  SHINY
+                </button>
+
+https://docs.pokemontcg.io/api-reference/cards/search-cards
+
+
+} */
+.card-image>img{
+  position: absolute;
+  top: 70px;
+  height: 180px;
+  width: 180px;
+  transition: 1s;
+  cursor: pointer;
+  /* transition:ease-in-out 10s; */
+
+}
+.btn-shiny{
+  position:absolute;
+  left: 25px;
+  top: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 7px;
+
+}
+.aviso-shiny{
+bottom:-270px;
+position: absolute;
+color: antiquewhite;
+font-family: sans-serif;
+}
