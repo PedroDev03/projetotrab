@@ -2,15 +2,13 @@ import React, { useState, useEffect } from "react";
 import "./index.css";
   import pokelogo from "./assets/pokelogo.png";
 export default function App() {
-  const [data, setData] = useState(null);
-  const [isError, setIsError] = useState(null)
+  const [data, setData] = useState('');
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonshiny , setPokemonshiny] = useState(true);
 
 
 
     const fetchData = async () => {
-      console.log('rodolfo');
       try {
         const response = await fetch(
           `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
@@ -20,40 +18,28 @@ export default function App() {
         console.log(response.status);
       } catch (error) {
         console.error("Erro ao buscar dados:", error);
-        setIsError(error)
         setPokemonName('');
-        setPokemonshiny(true);
     
         // throw new Error ('404')
       }
     };
 
-useEffect(() => {
+
+    useEffect(() => {
+      fetchData();
+    }, [pokemonName]);
   
- fetchData();
-}, [pokemonName])
+    const handleInputChange = (event) => {
+      const name = event.target.value;
+      setPokemonName(name.toLowerCase());
+        fetchData();
+    };
 
 
-
-
-  const handleInputChange = (event) => {
-    const name = event.target.value;
-    setPokemonName(name.toLowerCase());
-     fetchData();
- 
-  };
-
-
-
-
-
-  if (!data) {
-    return <>Carregando...</>;
-  }
 
 
   const typeColors = {
-    // fire: "red",
+
     fire: "orangered",
     water: "dodgerblue",
     grass: "green",
@@ -106,16 +92,15 @@ useEffect(() => {
         <div className="header-card">
           <div className="input-area">
             <input type="text" onChange={handleInputChange} />
-            <div className="tipo">Tipo: {verify ? data.types[0].type.name : '' || verify ? data.types[1].type.name : ''}</div>
+            <div className="tipo">Tipo: {verify ? data.types[0].type.name : '' || verify ? data.types[1].type.name : ''}
+              
+            </div>
           </div>
         
          <div className="card-image ">
 
          <img
-           className={pokemonshiny ? "fade-in" : "hidden"}
            src={actualImage}
-           alt="Normal"
-           onClick={() => setPokemonshiny(!pokemonshiny)}
          />
          <img
            className={pokemonshiny ? "hidden" : "fade-in"}
