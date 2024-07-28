@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
-  import pokelogo from "./assets/pokelogo.png";
-export default function App() {
+import pokelogo from "./assets/pokelogo.png";
+
+
+export default function App() 
+{
   const [data, setData] = useState('');
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonshiny , setPokemonshiny] = useState(true);
@@ -18,7 +21,7 @@ export default function App() {
         console.log(response.status);
       } catch (error) {
         console.error("Erro ao buscar dados:", error);
-        setPokemonName('');
+        
     
         // throw new Error ('404')
       }
