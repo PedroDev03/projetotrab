@@ -30,7 +30,7 @@ export default function App()
 
     useEffect(() => {
       fetchData();
-    }, [pokemonName, fetchData]);
+    }, []);
   
     const handleInputChange = (event) => {
       const name = event.target.value;
