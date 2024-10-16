@@ -7,7 +7,7 @@ export default function App()
 {
   const [data, setData] = useState('');
   const [pokemonName, setPokemonName] = useState("");
-  const [pokemonshiny , setPokemonshiny] = useState(true);
+  const [pokemonshiny , setPokemonshiny] = useState(false);
 
 
 
@@ -67,7 +67,6 @@ export default function App()
   
 
 
-
   const saberTipo = (verify) => {
     if (verify && typeColors.hasOwnProperty(verify)) {
       return typeColors[verify];
@@ -77,15 +76,13 @@ export default function App()
   };
   
 
-  const actualImageshiny = data?.sprites?.front_shiny || pokelogo;
+  const Imageshiny = data?.sprites?.front_shiny || pokelogo;
   const actualImage = data?.sprites?.front_default  || pokelogo  ;
   const verify = data.types && data.types.length > 0 && data.types[0].type && data.types[0].type.name || data.types && data.types.length > 0 && data.types[1].type && data.types[1].type.name;
 
   const habilidade = data.abilities && data.abilities.length > 0 && data.abilities[0].ability && data.abilities[0].ability.name ;
 
   
-
-
 
   return (
     <div className="container">
@@ -102,15 +99,12 @@ export default function App()
         
          <div className="card-image ">
 
+    
          <img
-           src={actualImage}
-         />
-         <img
-           className={pokemonshiny ? "hidden" : "fade-in"}
-           src={actualImageshiny}
-           alt="Shiny"
+           alt={pokemonshiny ? "Shiny" : "Normal"}
+           src={pokemonshiny ? Imageshiny : actualImage}
            onClick={() => setPokemonshiny(!pokemonshiny)}
-         />
+        />
        </div>
        
                    
@@ -120,7 +114,7 @@ export default function App()
           </div>
        
         <div className="card-info">
-        {!pokemonshiny && data.name ? <div className="aviso-shiny">shiny</div> : ''}
+        {pokemonshiny && data.name ? <div className="aviso-shiny">shiny</div> : ''}
           <p>Nome: {data.name}</p>
           <p>altura: {data.height ? data.height/10  + ' m' : ''}  </p>
           <p>peso: {data.weight ? data.weight/10  + ' kg' : ''} </p>
